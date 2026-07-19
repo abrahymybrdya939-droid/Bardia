@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>النگو | زیورآلات سنتی اصفهان</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap');
+
+:root{
+  --bg-deep:#16241C;
+  --bg-panel:#1F3327;
+  --bg-panel-2:#233A2C;
+  --gold:#C9A227;
+  --gold-light:#E8C766;
+  --ivory:#F3ECDD;
+  --ivory-dim:#CFC6AF;
+  --wine:#7C2D3B;
+  --wine-light:#9C3F4F;
+  --feroze:#1E6F78;
+  --feroze-light:#3D9AA0;
+  --sunset:#B5622E;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:
+    radial-gradient(circle at 50% 50%, transparent 40%, rgba(0,0,0,0.15) 100%),
+    var(--bg-deep);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23C9A227' stroke-width='0.6' opacity='0.07'%3E%3Cpath d='M42 4 L66 20 L66 50 L42 66 L18 50 L18 20 Z'/%3E%3Cpath d='M42 4 L42 66 M18 20 L66 50 M66 20 L18 50'/%3E%3C/g%3E%3C/svg%3E");
+  color:var(--ivory);
+  font-family:'Vazirmatn',sans-serif;
+  line-height:1.9;
+  overflow-x:hidden;
+}
+
+/* gentle glow used on gold accents throughout */
+@keyframes goldpulse{
+  0%,100%{filter:drop-shadow(0 0 0px rgba(232,199,102,0));}
+  50%{filter:drop-shadow(0 0 6px rgba(232,199,102,0.55));}
+}
+
+/* scroll-reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease, transform .8s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+h1,h2,h3,.naskh{
+  font-family:'Noto Naskh Arabic','Vazirmatn',serif;
+  font-weight:700;
+}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+.tile-divider{
+  height:26px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='26' viewBox='0 0 52 26'%3E%3Crect width='52' height='26' fill='%231F3327'/%3E%3Cg fill='none' stroke='%23C9A227' stroke-width='1.1'%3E%3Cpath d='M13 0 L26 6 L39 0 M13 26 L26 20 L39 26'/%3E%3Cpath d='M0 6 L13 13 L0 20 M52 6 L39 13 L52 20'/%3E%3C/g%3E%3Cg fill='%231E6F78'%3E%3Cpolygon points='26,4 30,9 26,14 22,9'/%3E%3Cpolygon points='0,17 4,22 0,26 -4,22'/%3E%3Cpolygon points='52,17 56,22 52,26 48,22'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat-x;
+  background-size:52px 26px;
+  opacity:0.75;
+}
+
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(22,36,28,0.9);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(201,162,39,0.18);
+}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+.logo{font-family:'Noto Naskh Arabic',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light);letter-spacing:1px;}
+.nav-links{display:flex;gap:30px;font-size:0.95rem;color:var(--ivory-dim);}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-cta{background:var(--wine);color:var(--ivory);padding:9px 22px;border-radius:2px;font-size:0.9rem;border:1px solid rgba(232,199,102,0.3);}
+.nav-cta:hover{background:var(--wine-light);}
+
+.hero{
+  position:relative;padding:70px 0 0;
+  background:
+    radial-gradient(ellipse at 30% 10%, rgba(201,162,39,0.12), transparent 55%),
+    var(--bg-deep);
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:10px;align-items:center;position:relative;z-index:2;}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(61,154,160,0.5);
+  background:rgba(30,111,120,0.15);
+  color:var(--feroze-light);
+  font-size:0.82rem;
+  padding:7px 16px;
+  border-radius:20px;
+  margin-bottom:22px;
+}
+.eyebrow{color:var(--gold);font-size:0.85rem;letter-spacing:3px;margin-bottom:18px;display:inline-block;border-bottom:1px solid var(--gold);padding-bottom:6px;}
+.hero h1{font-size:3rem;color:var(--ivory);line-height:1.5;margin-bottom:22px;max-width:720px;}
+.hero h1 span{
+  color:var(--gold-light);
+  background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%);
+  background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shimmer 6s linear infinite;
+}
+@keyframes shimmer{0%{background-position:0% center;}100%{background-position:200% center;}}
+.hero p{color:var(--ivory-dim);font-size:1.08rem;max-width:520px;margin-bottom:34px;}
+.btn-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:50px;}
+.btn-primary{background:var(--gold);color:var(--bg-deep);font-weight:700;padding:14px 30px;border-radius:2px;font-size:0.98rem;transition:transform .2s ease, background .2s ease, box-shadow .3s ease;display:inline-block;box-shadow:0 0 0 rgba(232,199,102,0);}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 6px 22px rgba(201,162,39,0.35);}
+.btn-ghost{border:1px solid rgba(243,236,221,0.35);color:var(--ivory);padding:14px 30px;border-radius:2px;font-size:0.98rem;transition:border-color .2s ease, color .2s ease;}
+.btn-ghost:hover{border-color:var(--feroze-light);color:var(--feroze-light);}
+
+/* ---------- SIGNATURE: real photo hero with ornate tile frame ---------- */
+.hero-photo-wrap{
+  position:relative;
+  width:100%;
+  padding:0 0 0;
+}
+.hero-photo{
+  position:relative;
+  width:100%;
+  height:400px;
+  overflow:hidden;
+  border-top:3px solid var(--gold);
+  border-bottom:3px solid var(--gold);
+  box-shadow:inset 0 0 0 6px rgba(30,111,120,0.35);
+}
+.hero-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:center 55%;
+  filter:saturate(1.08) contrast(1.05);
+}
+.hero-photo::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(15,35,32,0.55) 0%, rgba(15,35,32,0.15) 30%, rgba(15,35,32,0.15) 60%, rgba(15,35,32,0.75) 100%);
+}
+.corner-mark{
+  position:absolute;width:34px;height:34px;z-index:3;opacity:0.85;
+}
+.corner-mark.tl{top:10px;left:10px;transform:rotate(0deg);}
+.corner-mark.tr{top:10px;right:10px;transform:scaleX(-1);}
+.corner-mark.bl{bottom:10px;left:10px;transform:scaleY(-1);}
+.corner-mark.br{bottom:10px;right:10px;transform:scale(-1,-1);}
+.hero-caption{
+  position:absolute;bottom:16px;right:24px;z-index:3;
+  font-size:0.8rem;color:var(--gold-light);
+  background:rgba(15,35,32,0.55);
+  padding:6px 14px;border-radius:20px;
+  border:1px solid rgba(201,162,39,0.4);
+  backdrop-filter:blur(4px);
+}
+.star{animation:twinkle 4s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:0.25;}50%{opacity:0.9;}}
+.lantern-glow{animation:lanternflicker 3.2s ease-in-out infinite;}
+@keyframes lanternflicker{
+  0%,100%{opacity:0.55;}
+  45%{opacity:1;}
+  55%{opacity:0.7;}
+}
+@media (prefers-reduced-motion: reduce){
+  .star,.lantern-glow{animation:none;}
+  .hero h1 span{animation:none;}
+}
+
+.section{padding:80px 0;}
+.section-head{text-align:center;max-width:620px;margin:0 auto 56px;}
+.section-head .eyebrow{border:none;padding:0;}
+.section-head h2{font-size:2.1rem;margin-top:10px;color:var(--ivory);}
+.section-head p{color:var(--ivory-dim);margin-top:14px;font-size:1rem;}
+
+.products{background:var(--bg-panel);}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.card{background:var(--bg-panel-2);border:1px solid rgba(201,162,39,0.15);border-radius:4px;padding:30px 24px;text-align:center;transition:border-color .25s ease, transform .25s ease;}
+.card:hover{border-color:rgba(201,162,39,0.55);transform:translateY(-4px);box-shadow:0 10px 26px rgba(201,162,39,0.12);}
+.card-photo{
+  width:100%;
+  aspect-ratio:1/1;
+  margin:0 0 20px;
+  overflow:hidden;
+  border-radius:4px;
+  border:1px solid rgba(201,162,39,0.25);
+}
+.card-photo img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease;
+  filter:saturate(1.05) contrast(1.03);
+}
+.card:hover .card-photo img{transform:scale(1.08);}
+.card-icon{width:120px;height:120px;margin:0 auto 22px;transition:transform .4s ease;}
+.card:hover .card-icon{transform:rotate(8deg) scale(1.05);}
+.card h3{font-size:1.15rem;color:var(--gold-light);margin-bottom:8px;}
+.card .material{color:var(--ivory-dim);font-size:0.88rem;margin-bottom:14px;}
+.card .price{font-size:1.05rem;color:var(--ivory);font-weight:600;margin-bottom:18px;}
+.card .price span{color:var(--ivory-dim);font-weight:400;font-size:0.82rem;margin-right:4px;}
+.card-btn{display:inline-block;border:1px solid var(--gold);color:var(--gold-light);padding:9px 22px;border-radius:2px;font-size:0.85rem;transition:background .2s ease, color .2s ease;}
+.card-btn:hover{background:var(--gold);color:var(--bg-deep);}
+
+.workshop{background:var(--bg-deep);position:relative;}
+.workshop-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:center;}
+.dome-art{
+  aspect-ratio:1/1.05;
+  background:radial-gradient(circle at 50% 35%, rgba(30,111,120,0.25), transparent 60%), var(--bg-panel);
+  border:1px solid rgba(61,154,160,0.3);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+}
+.dome-art svg{width:72%;height:72%;}
+.workshop-text .eyebrow{border:none;padding:0;color:var(--feroze-light);}
+.workshop-text h2{font-size:2rem;margin:12px 0 20px;}
+.workshop-text p{color:var(--ivory-dim);margin-bottom:16px;font-size:1rem;}
+.workshop-list{margin-top:24px;display:flex;flex-direction:column;gap:14px;}
+.workshop-list .item{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid rgba(243,236,221,0.1);padding-bottom:14px;}
+.workshop-list .item b{color:var(--feroze-light);min-width:110px;font-size:0.95rem;}
+.workshop-list .item span{color:var(--ivory-dim);font-size:0.92rem;}
+
+/* ---------- ATTRACTIONS (illustrated sights) ---------- */
+.attractions{background:var(--bg-panel);}
+.attraction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.attraction-card{
+  background:var(--bg-panel-2);
+  border:1px solid rgba(61,154,160,0.2);
+  border-radius:4px;
+  overflow:hidden;
+  transition:border-color .25s ease, transform .25s ease;
+}
+.attraction-card:hover{border-color:rgba(61,154,160,0.55);transform:translateY(-4px);box-shadow:0 10px 26px rgba(61,154,160,0.18);}
+.attraction-art{
+  height:190px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:2px solid var(--gold);
+}
+.attraction-art img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease;
+  filter:saturate(1.1) contrast(1.04);
+}
+.attraction-card:hover .attraction-art img{transform:scale(1.06);}
+.attraction-art.illustrated{
+  background:linear-gradient(180deg, #12262A 0%, var(--feroze) 130%);
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.attraction-art.illustrated svg{width:100%;height:100%;}
+.attraction-art .tag{
+  position:absolute;bottom:8px;right:10px;z-index:2;
+  font-size:0.72rem;color:var(--gold-light);
+  background:rgba(15,35,32,0.6);
+  padding:3px 10px;border-radius:14px;
+}
+.attraction-body{padding:22px 20px 26px;text-align:center;}
+.attraction-body h3{font-size:1.08rem;color:var(--gold-light);margin-bottom:8px;}
+.attraction-body p{color:var(--ivory-dim);font-size:0.9rem;}
+
+.craft{background:var(--bg-deep);}
+.craft-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:60px;align-items:center;}
+.craft-art{aspect-ratio:1/1.05;background:var(--bg-panel);border:1px solid rgba(201,162,39,0.18);border-radius:4px;display:flex;align-items:center;justify-content:center;}
+.craft-art svg{width:70%;height:70%;}
+.craft-text .eyebrow{border:none;padding:0;}
+.craft-text h2{font-size:2rem;margin:12px 0 20px;}
+.craft-text p{color:var(--ivory-dim);margin-bottom:16px;font-size:1rem;}
+
+.contact{background:var(--bg-panel);text-align:center;}
+.contact .section-head{margin-bottom:44px;}
+.contact-row{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;}
+.contact-card{background:var(--bg-panel-2);border:1px solid rgba(201,162,39,0.18);border-radius:4px;padding:28px 34px;min-width:220px;transition:border-color .2s ease;}
+.contact-card:hover{border-color:rgba(201,162,39,0.5);}
+.contact-card .label{color:var(--ivory-dim);font-size:0.82rem;margin-bottom:8px;}
+.contact-card .value{color:var(--gold-light);font-size:1.1rem;font-weight:600;}
+.contact-note{margin-top:36px;color:var(--ivory-dim);font-size:0.85rem;}
+
+footer{padding:36px 0;text-align:center;color:var(--ivory-dim);font-size:0.85rem;border-top:1px solid rgba(201,162,39,0.15);}
+footer .logo{font-size:1.15rem;display:block;margin-bottom:8px;}
+footer .loc{color:var(--feroze-light);font-size:0.8rem;margin-top:6px;display:block;}
+
+@media (max-width:860px){
+  .hero h1{font-size:2.2rem;}
+  .hero-photo{height:480px;}
+  .product-grid{grid-template-columns:repeat(2,1fr);}
+  .attraction-grid{grid-template-columns:1fr;}
+  .workshop-grid{grid-template-columns:1fr;}
+  .dome-art{max-width:320px;margin:0 auto;}
+  .craft-grid{grid-template-columns:1fr;}
+  .craft-art{max-width:320px;margin:0 auto;order:-1;}
+  .nav-links{display:none;}
+}
+@media (max-width:520px){
+  .product-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:1.7rem;}
+  .hero p{font-size:0.95rem;}
+  .section{padding:56px 0;}
+  .hero-photo{height:560px;}
+}
+a:focus-visible, button:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <span class="logo">النگو</span>
+      <div class="nav-links">
+        <a href="#products">محصولات</a>
+        <a href="#workshop">فروشگاه ما</a>
+        <a href="#attractions">جاهای دیدنی</a>
+        <a href="#contact">تماس با ما</a>
+      </div>
+      <a href="#contact" class="nav-cta">سفارش بدید</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-photo">
+    <img src="img/aliqapu-sunset.jpg" alt="کاخ عالی‌قاپو در میدان نقش‌جهان، اصفهان، هنگام غروب">
+    <svg class="corner-mark tl" viewBox="0 0 34 34"><path d="M2 34 V10 Q2 2 10 2 H34" fill="none" stroke="#E8C766" stroke-width="2"/><circle cx="10" cy="10" r="2.4" fill="#E8C766"/></svg>
+    <svg class="corner-mark tr" viewBox="0 0 34 34"><path d="M2 34 V10 Q2 2 10 2 H34" fill="none" stroke="#E8C766" stroke-width="2"/><circle cx="10" cy="10" r="2.4" fill="#E8C766"/></svg>
+    <svg class="corner-mark bl" viewBox="0 0 34 34"><path d="M2 34 V10 Q2 2 10 2 H34" fill="none" stroke="#E8C766" stroke-width="2"/><circle cx="10" cy="10" r="2.4" fill="#E8C766"/></svg>
+    <svg class="corner-mark br" viewBox="0 0 34 34"><path d="M2 34 V10 Q2 2 10 2 H34" fill="none" stroke="#E8C766" stroke-width="2"/><circle cx="10" cy="10" r="2.4" fill="#E8C766"/></svg>
+    <span class="hero-caption">عالی‌قاپو، میدان نقش‌جهان</span>
+    <div class="wrap hero-grid" style="position:absolute;inset:0;display:flex;align-items:center;z-index:2;">
+      <div>
+        <div class="badge">📍 کنار میدان نقش‌جهان، اصفهان</div>
+        <h1>النگویی که <span>صدای اصالت</span> می‌دهد</h1>
+        <p>عرضه مستقیم و عمده‌ی النگو بدل، چند قدمی میدان نقش‌جهان اصفهان؛ تنوع طرح بالا و قیمت مناسب برای خرید عمده.</p>
+        <div class="btn-row" style="margin-bottom:0;">
+          <a href="#products" class="btn-primary">دیدن محصولات</a>
+          <a href="#contact" class="btn-ghost">تماس با ما</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tile-divider"></div>
+
+<section class="section products" id="products">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">مجموعه ما</span>
+      <h2>محصولات نمونه</h2>
+      <p>گلچینی از طرح‌های پرطرفدار، برگرفته از هنر سنتی اصفهان؛ قیمت‌ها به تومان و برای هر یک عدد النگو است.</p>
+    </div>
+    <div class="product-grid reveal">
+
+      <div class="card">
+        <div class="card-photo"><img src="img/products/bangle-01.jpg" alt="النگو بدل طرح مارپیچ"></div>
+        <h3>النگو طرح مارپیچ</h3>
+        <div class="material">بدل · قطر ۲ سانت</div>
+        <div class="price">۱۸۰,۰۰۰ <span>تومان / عدد</span></div>
+        <a href="https://wa.me/989138111174?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%A7%D9%84%D9%86%DA%AF%D9%88%20%D8%B7%D8%B1%D8%AD%20%D9%85%D8%A7%D8%B1%D9%BE%DB%8C%DA%86%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85" class="card-btn" target="_blank" rel="noopener">استعلام و خرید</a target="_blank" rel="noopener">
+      </div>
+
+      <div class="card">
+        <div class="card-photo"><img src="img/products/bangle-02.jpg" alt="النگو بدل طرح زیگزاگ"></div>
+        <h3>النگو طرح زیگزاگ</h3>
+        <div class="material">بدل · قطر ۴ سانت</div>
+        <div class="price">۲۸۰,۰۰۰ <span>تومان / عدد</span></div>
+        <a href="https://wa.me/989138111174?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%A7%D9%84%D9%86%DA%AF%D9%88%20%D8%B7%D8%B1%D8%AD%20%D8%B2%DB%8C%DA%AF%D8%B2%D8%A7%DA%AF%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85" class="card-btn" target="_blank" rel="noopener">استعلام و خرید</a target="_blank" rel="noopener">
+      </div>
+
+      <div class="card">
+        <div class="card-photo"><img src="img/products/bangle-03.jpg" alt="النگو بدل طرح شطرنجی برجسته"></div>
+        <h3>النگو طرح شطرنجی برجسته</h3>
+        <div class="material">بدل · قطر ۴ سانت</div>
+        <div class="price">۲۸۰,۰۰۰ <span>تومان / عدد</span></div>
+        <a href="https://wa.me/989138111174?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%A7%D9%84%D9%86%DA%AF%D9%88%20%D8%B7%D8%B1%D8%AD%20%D8%B4%D8%B7%D8%B1%D9%86%D8%AC%DB%8C%20%D8%A8%D8%B1%D8%AC%D8%B3%D8%AA%D9%87%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85" class="card-btn" target="_blank" rel="noopener">استعلام و خرید</a target="_blank" rel="noopener">
+      </div>
+
+      <div class="card">
+        <div class="card-photo"><img src="img/products/bangle-04.jpg" alt="النگو بدل طرح خطوط اریب"></div>
+        <h3>النگو طرح خطوط اریب</h3>
+        <div class="material">بدل · قطر ۲ سانت</div>
+        <div class="price">۱۸۰,۰۰۰ <span>تومان / عدد</span></div>
+        <a href="https://wa.me/989138111174?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%A7%D9%84%D9%86%DA%AF%D9%88%20%D8%B7%D8%B1%D8%AD%20%D8%AE%D8%B7%D9%88%D8%B7%20%D8%A7%D8%B1%DB%8C%D8%A8%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85" class="card-btn" target="_blank" rel="noopener">استعلام و خرید</a target="_blank" rel="noopener">
+      </div>
+
+      <div class="card">
+        <div class="card-photo"><img src="img/products/bangle-05.jpg" alt="النگو بدل طرح هزارتو"></div>
+        <h3>النگو طرح هزارتو</h3>
+        <div class="material">بدل · قطر ۴ سانت</div>
+        <div class="price">۲۸۰,۰۰۰ <span>تومان / عدد</span></div>
+        <a href="https://wa.me/989138111174?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%A7%D9%84%D9%86%DA%AF%D9%88%20%D8%B7%D8%B1%D8%AD%20%D9%87%D8%B2%D8%A7%D8%B1%D8%AA%D9%88%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85" class="card-btn" target="_blank" rel="noopener">استعلام و خرید</a target="_blank" rel="noopener">
+      </div>
+
+      <div class="card">
+        <div class="card-photo"><img src="img/products/bangle-06.jpg" alt="النگو بدل طرح توری الماسی"></div>
+        <h3>النگو طرح توری الماسی</h3>
+        <div class="material">بدل · قطر ۴ سانت</div>
+        <div class="price">۲۸۰,۰۰۰ <span>تومان / عدد</span></div>
+        <a href="https://wa.me/989138111174?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%A7%D9%84%D9%86%DA%AF%D9%88%20%D8%B7%D8%B1%D8%AD%20%D8%AA%D9%88%D8%B1%DB%8C%20%D8%A7%D9%84%D9%85%D8%A7%D8%B3%DB%8C%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85" class="card-btn" target="_blank" rel="noopener">استعلام و خرید</a target="_blank" rel="noopener">
+      </div>
+
+      <div class="card">
+        <div class="card-photo"><img src="img/products/bangle-07.jpg" alt="النگو بدل طرح دورنگ نقره‌ای‌طلایی"></div>
+        <h3>النگو طرح دورنگ</h3>
+        <div class="material">بدل · قطر ۲ سانت</div>
+        <div class="price">۱۸۰,۰۰۰ <span>تومان / عدد</span></div>
+        <a href="https://wa.me/989138111174?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%A7%D9%84%D9%86%DA%AF%D9%88%20%D8%B7%D8%B1%D8%AD%20%D8%AF%D9%88%D8%B1%D9%86%DA%AF%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85" class="card-btn" target="_blank" rel="noopener">استعلام و خرید</a target="_blank" rel="noopener">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="tile-divider"></div>
+
+<section class="section workshop" id="workshop">
+  <div class="wrap workshop-grid">
+    <div class="dome-art">
+      <svg viewBox="0 0 200 220">
+        <path d="M40 200 L40 130 Q40 60 100 40 Q160 60 160 130 L160 200 Z" fill="none" stroke="#3D9AA0" stroke-width="2"/>
+        <path d="M100 40 Q70 70 60 130 M100 40 Q130 70 140 130" fill="none" stroke="#C9A227" stroke-width="1" stroke-dasharray="2 4"/>
+        <circle cx="100" cy="34" r="5" fill="#C9A227"/>
+        <line x1="100" y1="10" x2="100" y2="34" stroke="#C9A227" stroke-width="2"/>
+        <g stroke="#1E6F78" stroke-width="1" opacity="0.6">
+          <path d="M40 200 h120 M40 180 h120 M40 160 h120"/>
+        </g>
+      </svg>
+    </div>
+    <div class="workshop-text">
+      <span class="eyebrow">فروشگاه ما</span>
+      <h2>چند قدمی میدان نقش‌جهان</h2>
+      <p>فروشگاه النگو در دل اصفهان و در همسایگی میدان نقش‌جهان قرار دارد. النگوهای بدل با کیفیت و طرح متنوع رو به‌صورت مستقیم و با قیمت عمده عرضه می‌کنیم؛ مناسب خرید شخصی و فروشگاه‌ها.</p>
+      <div class="workshop-list">
+        <div class="item"><b>موقعیت</b><span>اصفهان، مجاور میدان نقش‌جهان</span></div>
+        <div class="item"><b>عرضه</b><span>فروش عمده با قیمت رقابتی</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section attractions" id="attractions">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">دور و بر فروشگاه ما</span>
+      <h2>جاهای دیدنی نزدیک ما</h2>
+      <p>وقتی برای خرید یا بازدید فروشگاه به اصفهان می‌آیید، این‌ها هم چند قدم با ما فاصله دارند.</p>
+    </div>
+    <div class="attraction-grid reveal">
+
+      <div class="attraction-card">
+        <div class="attraction-art">
+          <img src="img/aliqapu-day.jpg" alt="کاخ عالی‌قاپو در روز، میدان نقش‌جهان اصفهان">
+          <span class="tag">عالی‌قاپو</span>
+        </div>
+        <div class="attraction-body">
+          <h3>کاخ عالی‌قاپو</h3>
+          <p>ایوان ستوندار و کاشی‌کاری‌های نفیسش، مشرف به کل میدان نقش‌جهان و همسایه‌ی نزدیک فروشگاه ماست.</p>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attraction-art">
+          <img src="img/siosepol-night.jpg" alt="پل سی‌وسه‌پل در شب با نورپردازی طلایی، اصفهان">
+          <span class="tag">سی‌وسه‌پل</span>
+        </div>
+        <div class="attraction-body">
+          <h3>پل سی‌و‌سه‌پل</h3>
+          <p>با سی‌وسه دهانه‌ی قوسی روی زاینده‌رود، محل قدم‌زدن عصرگاهی اهالی و مسافران اصفهان.</p>
+        </div>
+      </div>
+
+      <div class="attraction-card">
+        <div class="attraction-art illustrated">
+          <svg viewBox="0 0 300 170" preserveAspectRatio="xMidYMax slice">
+            <g fill="none" stroke="#E8C766" stroke-width="2" opacity="0.85">
+              <path d="M20 170 V90 Q50 60 80 90 V170"/>
+              <path d="M80 170 V90 Q110 60 140 90 V170"/>
+              <path d="M140 170 V90 Q170 60 200 90 V170"/>
+              <path d="M200 170 V90 Q230 60 260 90 V170"/>
+            </g>
+            <circle cx="50" cy="110" r="3" fill="#C9A227"/>
+            <circle cx="110" cy="110" r="3" fill="#C9A227"/>
+            <circle cx="170" cy="110" r="3" fill="#C9A227"/>
+            <circle cx="230" cy="110" r="3" fill="#C9A227"/>
+          </svg>
+        </div>
+        <div class="attraction-body">
+          <h3>بازار بزرگ اصفهان</h3>
+          <p>راهروهای سرپوشیده و پرغلغله‌ای که صدها سال است صنعتگران و بازرگانان در آن داد و ستد می‌کنند.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section craft" id="craft">
+  <div class="wrap craft-grid">
+    <div class="craft-text">
+      <span class="eyebrow">درباره ما</span>
+      <h2>عرضه مستقیم، قیمت عمده</h2>
+      <p>النگوهای بدل با طرح‌های متنوع رو مستقیم و بدون واسطه، با قیمت مناسب برای خرید عمده عرضه می‌کنیم. برای سفارش‌های عمده و فروشگاه‌ها، قیمت ویژه در نظر گرفته می‌شود.</p>
+      <p>رنگ فیروزه‌ای در طرح‌های سایت یادآور گنبدهای اصفهان و کاشی‌های هفت‌رنگ میدان نقش‌جهان است.</p>
+    </div>
+    <div class="craft-art">
+      <svg viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#C9A227" stroke-width="2"/>
+        <circle cx="100" cy="100" r="60" fill="none" stroke="#3D9AA0" stroke-width="1.5" stroke-dasharray="3 5"/>
+        <circle cx="100" cy="100" r="40" fill="none" stroke="#7C2D3B" stroke-width="2"/>
+        <g stroke="#C9A227" stroke-width="1">
+          <path d="M100 20 v20 M100 160 v20 M20 100 h20 M160 100 h20" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="tile-divider"></div>
+
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">در ارتباط باشید</span>
+      <h2>برای خرید یا سفارش سفارشی تماس بگیرید</h2>
+      <p>پاسخگویی هر روز از ساعت ۱۰ تا ۲۰</p>
+    </div>
+    <div class="contact-row reveal">
+      <a href="tel:+989138111174" class="contact-card">
+        <div class="label">تلفن تماس</div>
+        <div class="value">۰۹۱۳-۸۱۱-۱۱۷۴</div>
+      </a>
+      <a href="https://wa.me/989138111174?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%A7%D9%84%D9%86%DA%AF%D9%88%20%D8%B3%D9%88%D8%A7%D9%84%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%85" class="contact-card" target="_blank" rel="noopener">
+        <div class="label">واتساپ</div>
+        <div class="value">۰۹۱۳-۸۱۱-۱۱۷۴</div>
+      </a>
+    </div>
+    <p class="contact-note">پاسخگویی سریع‌تر در واتساپ 💬</p>
+  </div>
+</section>
+
+<footer>
+  <span class="logo">النگو</span>
+  <span>تمامی حقوق محفوظ است © ۱۴۰۴</span>
+  <span class="loc">اصفهان، ایران — کنار میدان نقش‌جهان</span>
+</footer>
+
+<script>
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+}
+</script>
+</body>
+</html>
